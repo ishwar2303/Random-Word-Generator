@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Picker</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="noOfTurns"></div>
+    <div class="fix-wrapper">
+        <div class="flex-col mb-10" id="numberOfWordsContainer">
+            <p>Number of words</p>
+            <input id="numberOfWords" value="3" />
+            
+            <p class="mt-20">Time in seconds</p>
+            <input id="timeInSeconds" value="10" />
+        </div>
+        <div id="wordsContainer" class="words-container">
+            Enter number of words to generate. Then click generate button.
+        </div>
+
+        <div id="timerContainer">
+        </div>
+        <div>
+            <button class="btn btn-primary btn-large" onclick="generateRandomWords()">Generate</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
