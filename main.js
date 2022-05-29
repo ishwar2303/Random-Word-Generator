@@ -58,7 +58,7 @@ class Timer {
         }
     
         if (this.time <= 0) {
-            timerblock.innerHTML = 'Time end!';
+            timerblock.innerHTML = 'Stop!';
             this.callback();
             this.stop();
         }
@@ -78,7 +78,7 @@ class Timer {
         timerblock.style.display = 'flex';
     
         if(this.countUpLimit <= this.time) {
-            timerblock.innerHTML = 'Time end!';
+            timerblock.innerHTML = 'Stop!';
             this.callback();
             this.stop();
         }
@@ -213,8 +213,9 @@ if(!localStorage.getItem('turns')) {
     localStorage.setItem('turns', 0);
 }
 
-const callback = () => {
-    document.getElementById('timer').innerHTML = 'Stop!';
+const playAudio = () => {
+    var x = document.getElementById("audio"); 
+    x.play();
 }
 
 const generateRandomWords = () => {
@@ -244,7 +245,7 @@ const generateRandomWords = () => {
         var timer = new Timer();
         let timeInSeconds = document.getElementById('timeInSeconds').value;
         if(timeInSeconds > 0) {
-            timer.set(timeInSeconds, id, callback);
+            timer.set(timeInSeconds, id, playAudio);
             for(let i=0; i<randomWords.length; i++) {
                 let div = document.createElement('div');
                 div.className = 'word';
